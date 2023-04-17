@@ -1,0 +1,14 @@
+.popup__bottom-link {
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.215;
+  transition: opacity 0.2s ease;
+}
+
+.popup__bottom-link:hover {
+  opacity: 0.6;
+}

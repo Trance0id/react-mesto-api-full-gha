@@ -1,0 +1,19 @@
+.profile__info {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: fit-content(100%) 24px;
+  gap: 10px 18px;
+  align-items: baseline;
+}
+
+@media (max-width: 650px) {
+  .profile__info {
+    width: auto;
+    grid-template-columns: 18px fit-content(100%) 18px;
+    column-gap: 10px;
+    position: relative;
+    text-align: center;
+    max-width: calc(100% - 2 * 28px);
+  }
+}

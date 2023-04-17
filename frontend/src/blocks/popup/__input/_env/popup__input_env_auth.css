@@ -1,0 +1,9 @@
+.popup__input_env_auth {
+  margin-top: 0;
+  border-bottom: 2px solid #ccc;
+  color: #fff;
+}
+
+.popup__input_env_auth::placeholder {
+  color: #ccc;
+}

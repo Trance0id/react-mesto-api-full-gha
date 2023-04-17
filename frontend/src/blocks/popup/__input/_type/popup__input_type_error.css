@@ -1,0 +1,7 @@
+.popup__input_type_error {
+  border-bottom-color: #f00;
+}
+
+.popup__input_type_error:last-child {
+  margin-bottom: 20px;
+}

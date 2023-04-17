@@ -1,0 +1,9 @@
+.popup__button_env_auth {
+  margin-top: 166px;
+  color: #000;
+  background-color: #fff;
+}
+
+.popup__button_env_auth:hover {
+  opacity: 0.85;
+}

@@ -1,0 +1,17 @@
+.content {
+  padding: 40px 0 66px;
+  max-width: 880px;
+  width: calc(100% - 24px * 2);
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 50px;
+  flex: auto;
+}
+
+@media (max-width: 650px) {
+  .content {
+    width: calc(100% - 19px * 2);
+    row-gap: 36px;
+    padding-bottom: 48px;
+  }
+}

@@ -1,0 +1,11 @@
+.button {
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: opacity .2s ease;
+  cursor: pointer;
+  outline: none;
+}

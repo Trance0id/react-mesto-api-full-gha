@@ -1,0 +1,8 @@
+.header__link_active {
+  color: #a9a9a9;
+}
+
+.header__link_active:hover {
+  color: #fff;
+  opacity: 0.6;
+}
