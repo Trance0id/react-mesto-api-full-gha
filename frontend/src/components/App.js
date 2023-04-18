@@ -289,14 +289,17 @@ function App() {
             element={
               <Register
                 formIsLoading={formIsLoading}
-                handleRegister={onRegister}
+                onSubmit={onRegister}
               />
             }
           />
           <Route
             path="/sign-in"
             element={
-              <Login formIsLoading={formIsLoading} handleLogin={onLogin} />
+              <Login
+                formIsLoading={formIsLoading}
+                onSubmit={onLogin}
+              />
             }
           />
         </Routes>

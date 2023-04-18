@@ -1,6 +1,6 @@
 import useValidation from "../hooks/useValidation.js";
 import { useState } from "react";
-function AuthForm({ formIsLoading, handleLogin }) {
+function AuthForm({ formIsLoading, onSubmit }) {
   const validation = useValidation();
 
   const [formValue, setFormValue] = useState({
@@ -19,7 +19,7 @@ function AuthForm({ formIsLoading, handleLogin }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleLogin(formValue);
+    onSubmit(formValue);
   };
 
   return (
