@@ -3,6 +3,7 @@ export const BASE_URL = "https://api.mesto.trance0id.nomoredomains.monster";
 export const register = (formData) => {
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",
+    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
     },
@@ -19,7 +20,7 @@ export const register = (formData) => {
 export const authorize = (formData) => {
   return fetch(`${BASE_URL}/signin`, {
     method: "POST",
-    // credentials: 'include',
+    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
     },
@@ -39,7 +40,6 @@ export const logout = () => {
     credentials: 'include',
     headers: {
       "Content-Type": "application/json",
-      // Authorization: `Bearer ${token}`,
     },
   }).then((res) => {
     if (res.ok) {
@@ -56,7 +56,6 @@ export const checkAuth = () => {
     credentials: 'include',
     headers: {
       "Content-Type": "application/json",
-      // Authorization: `Bearer ${token}`,
     },
   }).then((res) => {
     if (res.ok) {

@@ -247,9 +247,8 @@ function App() {
   ]);
 
   React.useEffect(() => {
-    const jwt = localStorage.getItem("jwt");
     auth
-      .checkAuth(jwt)
+      .checkAuth()
       .then((res) => {
         setEmail(res.email);
         setLoggedIn(true);
