@@ -132,9 +132,12 @@ function App() {
   }
 
   function onLogOut() {
-    setLoggedIn(false);
-    localStorage.removeItem("jwt");
-    setEmail("");
+    auth.logout()
+    .then(() => {
+      setLoggedIn(false);
+      setEmail("");
+
+    })
   }
 
   function onLogin(formData) {
