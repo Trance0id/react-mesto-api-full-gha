@@ -5,12 +5,12 @@ module.exports = (req, res, next) => {
   const requestHeaders = req.headers['access-control-request-headers'];
 
   if (method === 'OPTIONS') {
-    res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
-    res.header('Access-Control-Allow-Headers', requestHeaders);
+    res.set('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
+    res.set('Access-Control-Allow-Headers', requestHeaders);
     return res.end();
   }
 
-  res.header('Access-Control-Allow-Origin', '*');
+  res.set('Access-Control-Allow-Origin', '*');
 
   return next();
 };
