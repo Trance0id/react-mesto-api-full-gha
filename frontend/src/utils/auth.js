@@ -19,7 +19,7 @@ export const register = (formData) => {
 export const authorize = (formData) => {
   return fetch(`${BASE_URL}/signin`, {
     method: "POST",
-    credentials: 'include',
+    // credentials: 'include',
     headers: {
       "Content-Type": "application/json",
     },

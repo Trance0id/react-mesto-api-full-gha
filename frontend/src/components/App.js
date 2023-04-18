@@ -148,8 +148,7 @@ function App() {
     auth
       .authorize(formData)
       .then((res) => {
-        if (res.token) {
-          localStorage.setItem("jwt", res.token);
+        if (res) {
           setEmail(formData.email);
           setLoggedIn(true);
           navigate("/", { replace: true });
