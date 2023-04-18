@@ -4,7 +4,6 @@ export const register = (formData) => {
   console.log(JSON.stringify(formData));
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",
-    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
     },
@@ -43,10 +42,16 @@ export const logout = () => {
       "Content-Type": "application/json",
       // Authorization: `Bearer ${token}`,
     },
+  }).then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      return Promise.reject(`Ошибка выхода из системы! Статус: ${res.status}`);
+    }
   });
 };
 
-export const checkToken = (token) => {
+export const checkAuth = () => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     credentials: 'include',

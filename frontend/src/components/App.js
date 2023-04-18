@@ -136,7 +136,10 @@ function App() {
     .then(() => {
       setLoggedIn(false);
       setEmail("");
-
+    })
+    .catch(err => {
+      console.error(err);
+      alert(`Не удалось получить ответ от сервера. \n${err}`);
     })
   }
 
@@ -247,9 +250,9 @@ function App() {
   React.useEffect(() => {
     const jwt = localStorage.getItem("jwt");
     auth
-      .checkToken(jwt)
+      .checkAuth(jwt)
       .then((res) => {
-        setEmail(res.data.email);
+        setEmail(res.email);
         setLoggedIn(true);
         navigate("/", { replace: true });
         setIsInfoTooltipOpen(true);
