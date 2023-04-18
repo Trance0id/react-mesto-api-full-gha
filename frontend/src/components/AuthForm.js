@@ -1,12 +1,13 @@
 import useValidation from "../hooks/useValidation.js";
 import { useState } from "react";
-function AuthForm({ formIsLoading, onSubmit }) {
+function AuthForm({ name, formIsLoading, onSubmit, submitButtonText }) {
   const validation = useValidation();
 
   const [formValue, setFormValue] = useState({
     email: "",
     password: "",
   });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -23,7 +24,7 @@ function AuthForm({ formIsLoading, onSubmit }) {
   };
 
   return (
-    <form name="auth" className="popup__form" onSubmit={handleSubmit}>
+    <form name={name} className="popup__form" onSubmit={handleSubmit}>
       <input
         type="email"
         className="popup__input popup__input_env_auth"
@@ -57,7 +58,7 @@ function AuthForm({ formIsLoading, onSubmit }) {
         }`}
         disabled={!validation.isFormValid}
       >
-        {formIsLoading ? "Подождите..." : "Войти"}
+        {formIsLoading ? "Подождите..." : submitButtonText}
       </button>
     </form>
   );

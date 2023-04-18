@@ -1,5 +1,5 @@
 const API_CONFIG = {
-  baseUrl: "https://api.mesto.trance0id.nomoredomains.monster/",
+  baseUrl: "https://api.mesto.trance0id.nomoredomains.monster",
   headers: {
     // authorization: "66368252-4907-4b17-913b-366c2f7ebfd6",
   },
@@ -32,34 +32,34 @@ class Api {
   }
 
   getUserInfo() {
-    return this._callFetch("users/me");
+    return this._callFetch("/users/me");
   }
 
   getInitialCards() {
-    return this._callFetch("cards");
+    return this._callFetch("/cards");
   }
 
   changeLikeCardStatus(cardId, status) {
     return status
-      ? this._callFetch(`cards/${cardId}/likes`, "PUT")
-      : this._callFetch(`cards/${cardId}/likes`, "DELETE");
+      ? this._callFetch(`/cards/${cardId}/likes`, "PUT")
+      : this._callFetch(`/cards/${cardId}/likes`, "DELETE");
   }
 
   deleteCard(cardId) {
-    return this._callFetch(`cards/${cardId}`, "DELETE");
+    return this._callFetch(`/cards/${cardId}`, "DELETE");
   }
 
   setUserInfo(body) {
-    return this._callFetch("users/me", "PATCH", body, "application/json");
+    return this._callFetch("/users/me", "PATCH", body, "application/json");
   }
 
   addNewPlace(body) {
-    return this._callFetch("cards", "POST", body, "application/json");
+    return this._callFetch("/cards", "POST", body, "application/json");
   }
 
   setUserAvatar(body) {
     return this._callFetch(
-      "users/me/avatar",
+      "/users/me/avatar",
       "PATCH",
       body,
       "application/json"

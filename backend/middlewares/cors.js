@@ -7,11 +7,11 @@ module.exports = (req, res, next) => {
   if (method === 'OPTIONS') {
     res.set('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
     res.set('Access-Control-Allow-Headers', requestHeaders);
-    res.set('Access-Control-Allow-Origin', '*');
     return res.end();
   }
 
   res.set('Access-Control-Allow-Origin', '*');
+  res.set('Access-Control-Allow-Credentials', 'true');
 
   return next();
 };

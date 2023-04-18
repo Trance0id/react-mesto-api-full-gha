@@ -290,6 +290,7 @@ function App() {
               <Register
                 formIsLoading={formIsLoading}
                 onSubmit={onRegister}
+                submitButtonText={'Зарегистрироваться'}
               />
             }
           />
@@ -299,6 +300,7 @@ function App() {
               <Login
                 formIsLoading={formIsLoading}
                 onSubmit={onLogin}
+                submitButtonText={'Войти'}
               />
             }
           />

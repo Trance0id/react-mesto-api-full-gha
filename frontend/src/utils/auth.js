@@ -1,7 +1,6 @@
 export const BASE_URL = "https://api.mesto.trance0id.nomoredomains.monster";
 
 export const register = (formData) => {
-  console.log(JSON.stringify(formData));
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",
     headers: {
