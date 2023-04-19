@@ -48,9 +48,7 @@ app.post('/signup', celebrate({
   }),
 }), createUser);
 app.get('/signout', (req, res) => {
-  res.clearCookie('jwt', {
-    maxAge: 3600000 * 24 * 7, httpOnly: true, sameSite: 'none', secure: true,
-  }).send({ message: 'Вы успешно вышли из аккаунта' });
+  res.clearCookie('jwt').send({ message: 'Вы успешно вышли из аккаунта' });
 });
 
 app.use(auth);
