@@ -6,7 +6,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 62.84.122.102
+IP 62.84.122.102
 
 Frontend http://mesto.trance0id.nomoredomains.monster/
 
