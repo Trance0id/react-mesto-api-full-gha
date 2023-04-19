@@ -1,8 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const process = require('process');
 const { errors, celebrate, Joi } = require('celebrate');
 
 const auth = require('./middlewares/auth');
@@ -25,6 +25,12 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(requestLogger);
 app.use(cors);
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 
 app.post('/signin', celebrate({
   body: Joi.object().keys({
