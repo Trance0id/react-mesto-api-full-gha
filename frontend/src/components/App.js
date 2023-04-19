@@ -211,18 +211,9 @@ function App() {
   const navigate = useNavigate();
 
   function handleKeyDown(e) {
-    console.log(e.key);
     if (e.key === "Escape") {
       closeAllPopups();
     }
-  }
-
-  function addKeyListener() {
-    document.addEventListener("keydown", handleKeyDown);
-  }
-
-  function removeKeyListener() {
-    document.removeEventListener("keydown", handleKeyDown);
   }
 
   React.useEffect(() => {
@@ -234,9 +225,9 @@ function App() {
       isConfirmDeletionPopupOpen ||
       selectedCard.name
     ) {
-      addKeyListener();
+      document.addEventListener("keydown", handleKeyDown);
     }
-    return removeKeyListener;
+    return document.removeEventListener("keydown", handleKeyDown);
   }, [
     isInfoTooltipOpen,
     isEditProfilePopupOpen,
@@ -288,7 +279,6 @@ function App() {
               <Register
                 formIsLoading={formIsLoading}
                 onSubmit={onRegister}
-                submitButtonText={'Зарегистрироваться'}
               />
             }
           />
@@ -298,7 +288,6 @@ function App() {
               <Login
                 formIsLoading={formIsLoading}
                 onSubmit={onLogin}
-                submitButtonText={'Войти'}
               />
             }
           />
