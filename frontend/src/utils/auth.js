@@ -20,7 +20,6 @@ export const register = (formData) => {
 export const authorize = (formData) => {
   return fetch(`${BASE_URL}/signin`, {
     method: "POST",
-    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
     },
@@ -37,7 +36,6 @@ export const authorize = (formData) => {
 export const logout = () => {
   return fetch(`${BASE_URL}/signout`, {
     method: "GET",
-    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
     },
@@ -53,7 +51,6 @@ export const logout = () => {
 export const checkAuth = () => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
-    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
     },

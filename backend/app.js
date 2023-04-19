@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const process = require('process');
 const { errors, celebrate, Joi } = require('celebrate');
 
-// const cors = require('cors');
 const auth = require('./middlewares/auth');
 const usersRouter = require('./routes/users');
 const cardsRouter = require('./routes/cards');
@@ -25,7 +24,6 @@ const app = express();
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(requestLogger);
-// app.use(cors({ origin: true, credentials: true }));
 app.use(cors);
 
 app.post('/signin', celebrate({
