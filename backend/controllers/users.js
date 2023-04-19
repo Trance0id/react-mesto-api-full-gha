@@ -10,7 +10,9 @@ const login = (req, res, next) => {
   User.findUserByCredentials(email, password)
     .then((user) => {
       const token = jwt.sign({ _id: user._id }, 'secret-key', { expiresIn: '7d' });
-      res.cookie('jwt', token, { maxAge: 3600000 * 24 * 7, httpOnly: true, sameSite: 'none' }).send({ message: 'Вы успешно авторизовались' });
+      res.cookie('jwt', token, {
+        maxAge: 3600000 * 24 * 7, httpOnly: true, sameSite: 'none', secure: true,
+      }).send({ message: 'Вы успешно авторизовались' });
     })
     .catch((err) => {
       res.clearCookie('jwt');
