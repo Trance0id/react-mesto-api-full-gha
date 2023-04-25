@@ -49,6 +49,6 @@ Frontend - SPA на React, адаптивная вёрстка, backend - REST A
 
 - Всё приложение размещено на ВМ облачного сервиса Яндекс. Для приложения зарезервирован статический IP адрес и доменное имя. Выпущены SSL сертификаты. 
 
-[Frontend](httpы://mesto.trance0id.nomoredomains.monster/)
+[Frontend](https://mesto.trance0id.nomoredomains.monster/)
 
-[Backend](httpы://api.mesto.trance0id.nomoredomains.monster/)
+[Backend](https://api.mesto.trance0id.nomoredomains.monster/)
